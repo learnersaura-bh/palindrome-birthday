@@ -1,0 +1,22 @@
+body{
+    text-align: center;
+    background-color: rgba(194, 158, 228, 0.733);
+
+}
+
+.container{
+    max-width: 50%;
+    margin: auto;
+    display: block;
+    font-size: larger;
+}
+
+input{
+    font-size: larger;
+}
+
+button{
+    margin: auto;
+    padding: 0.5rem 0.5rem;
+    border-radius: 0.5rem;
+}

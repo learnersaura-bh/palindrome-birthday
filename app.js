@@ -82,7 +82,8 @@ function isLeapYear(year){
 function getNextDate(date){
    var day = date.day + 1;
    var month = date.month;
-   var year = date.year;
+   var year = date.year;.0
+
 
    var daysInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
@@ -136,12 +137,31 @@ return [ctr, nextDate]
 }
 
 
+var birthdayInput = document.querySelector("#date-of-birth");
+var checkButton = document.querySelector("#check-button");
+var showOutput = document.querySelector("#show-output");
 
+function clickEventhandler(e){
+   var bdayStr = birthdayInput.value;
+   if(bdayStr!== ''){
+    var listOfDate = bdayStr.split('-');
+    var date = {
+        day : Number(listOfDate[2]),
+        month : Number(listOfDate[1]),
+        year : Number(listOfDate[0])
+    };
+    var isPalindrome = checkPalindromeForAllFormat(date);
 
-var date = {
-    day : 10,
-    month : 1,
-    year : 2021,
+    if(isPalindrome){
+        showOutput.innerText = "Yes It is palindrome date"
+    }
+    else {
+       var [ctr , nextDate] = getNextPalindromeDate(date);
+       showOutput.innerText = `The next palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you are ${ctr} days away from it `
+    }
+   }
+
 }
 
-console.log(getNextPalindromeDate(date));
+
+checkButton.addEventListener("click" , clickEventhandler);
