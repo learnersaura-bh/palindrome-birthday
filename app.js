@@ -160,7 +160,7 @@ function clickEventhandler(e){
        showOutput.innerText = `The next palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you are ${ctr} days away from it `
     }
    }
-
+else{showOutput.innerText = "**Please enter the Date, it should not be empty"}
 }
 
 
