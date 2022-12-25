@@ -90,14 +90,14 @@ function getNextDate(date){
    if (month === 2){
     if(isLeapYear(year)){
         if(day > 29){
-            day = day+1
+            day = 1
             month++
         }
 
     }
     else {
         if(day > 28){
-            day = day+1;
+            day = 1;
             month++
         }
     }
